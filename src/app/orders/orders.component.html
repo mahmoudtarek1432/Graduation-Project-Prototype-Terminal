@@ -1,0 +1,23 @@
+<div class="order-body" fxLayout="row">
+    <div class="order-items">
+        <div class="item" *ngFor="let item of tableItems" fxLayout='row'>
+            <img src="{{item.image}}" alt="">
+            <div class="block">
+                <p>{{item.itemName}}</p>
+                <p>{{item.price}}</p>
+            </div>
+            <div class="spliter"></div>
+            <p>{{item.description}}</p>
+            <button mat-raised-button color="warn" (click)="deleteFromList(item.id)"><mat-icon>close</mat-icon></button>
+        </div>
+        <p></p>
+    </div>
+    <div class="checkout" fxLayout="column" fxLayoutAlign="start center">
+        <h2>Checkout</h2>
+        <div class="partition"></div>
+        <p>Total Cost: {{totalPrice}}</p>
+        <textarea matInput [(ngModel)]="additionalInfo" type="text" cols="22" rows="5"></textarea>
+        <p></p>
+        <button mat-button style="color: #fff;background-color: {{primaryColor}}" (click)="completeOrder()">Checkout</button>
+    </div>
+</div>

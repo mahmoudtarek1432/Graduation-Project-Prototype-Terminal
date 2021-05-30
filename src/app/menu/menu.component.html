@@ -1,0 +1,25 @@
+<div class="body">
+    <h2>Menu</h2>
+    <p></p>
+    <mat-accordion>
+        <div class="category" *ngFor="let cat of categories">
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{cat.name}}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="category-body" fxLayout="row" fxLayoutGap="10px">
+                    <div class="item" fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of cat.items; index as i">
+                        <img src="{{item.image}}" alt="">
+                        <div class="details" fxLayout="column" fxLayoutAlign="center center">
+                            <p style="font-weight: bold;">{{item.itemName}}</p>
+                            <p>{{item.price}}</p>
+                            <button style="width: 100%;" mat-raised-button (click)="addToCart(item)"><mat-icon>add_shopping_cart</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+              </mat-expansion-panel>
+        </div>
+    </mat-accordion>
+</div>

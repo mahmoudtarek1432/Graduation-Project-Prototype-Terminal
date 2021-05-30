@@ -1,0 +1,25 @@
+.body{
+    padding: 10px;
+    overflow: scroll;
+}
+.category-body{
+    overflow-y: scroll;
+    .item{
+        border: 1px solid rgb(216, 216, 216);
+        border-radius: 5px;
+        width: 120px;
+       .details{
+           width: 100%;
+       }
+        img{
+            height: 103px;
+            width: 102px;
+            margin: 8px;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            
+        }
+    }
+}
